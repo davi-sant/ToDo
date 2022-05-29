@@ -29,7 +29,7 @@ class _HomePageState extends State<HomePage> {
     return date;
   }
 
-  addTask() {
+  void addTask() {
     String text = controllerText.text;
 
     bool emptyField = text.isEmpty;
@@ -41,7 +41,7 @@ class _HomePageState extends State<HomePage> {
     controllerText.clear();
   }
 
-  onDelet(Todo task) {
+  void onDelet(Todo task) {
     saveDeletedTask = task;
     taskPosition = postTask.indexOf(task);
     setState(() {
@@ -51,7 +51,7 @@ class _HomePageState extends State<HomePage> {
     menssageOfDelete();
   }
 
-  menssageOfDelete() {
+  void menssageOfDelete() {
     ScaffoldMessenger.of(context).clearSnackBars();
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(

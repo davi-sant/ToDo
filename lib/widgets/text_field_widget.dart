@@ -23,11 +23,21 @@ class TextFieldWidget extends StatelessWidget {
           horizontal: 10,
         ),
         decoration: BoxDecoration(
-          border: Border.all(color: const Color.fromARGB(255, 59, 59, 59)),
+          boxShadow: [
+            BoxShadow(
+              color: Color.fromARGB(255, 43, 43, 43)
+                  .withOpacity(0.5), //color of shadow
+              spreadRadius: 2, //spread radius
+              blurRadius: 20, // blur radius
+              offset: Offset(0, 2), // changes position of shadow
+            ),
+            //you can set more BoxShadow() here
+          ],
+          border: Border.all(color: const Color.fromARGB(255, 38, 38, 38)),
           borderRadius: const BorderRadius.all(
             Radius.circular(12.0),
           ),
-          color: const Color.fromARGB(201, 30, 30, 30),
+          color: Color.fromARGB(200, 21, 21, 21),
         ),
         height: 55,
         child: Row(
@@ -45,15 +55,16 @@ class TextFieldWidget extends StatelessWidget {
                 decoration: InputDecoration(
                   labelStyle: const TextStyle(color: Colors.blue),
                   hintText: hinText,
-                  hintStyle:
-                      const TextStyle(color: Colors.blue, fontSize: 12.0),
+                  hintStyle: const TextStyle(
+                    color: Colors.blue,
+                    fontSize: 12.0,
+                  ),
                   enabledBorder: InputBorder.none,
                   suffixIcon: Container(
                     width: 70,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: Colors.black,
-                      border: Border.all(color: Colors.grey),
-                      borderRadius: const BorderRadius.all(
+                      borderRadius: BorderRadius.all(
                         Radius.circular(20),
                       ),
                     ),
